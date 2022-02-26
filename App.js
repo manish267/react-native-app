@@ -13,13 +13,16 @@ import GamingImg from "./assets/gaming.svg";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Home from "./screens/Home";
+import Terms from "./screens/Terms";
+import PrivacyPolicy from "./screens/PrivacyPolicy";
+import Help from "./screens/Help";
 
 const Stack = createNativeStackNavigator();
 
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Main">
+      <Stack.Navigator initialRouteName="Home">
         <Stack.Screen
           name="Main"
           component={Main}
@@ -28,6 +31,21 @@ const App = () => {
         <Stack.Screen
           name="Home"
           component={Home}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Terms"
+          component={Terms}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="PrivacyPolicy"
+          component={PrivacyPolicy}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Help"
+          component={Help}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>

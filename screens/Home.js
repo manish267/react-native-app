@@ -1,8 +1,16 @@
-import { View, Text, ImageBackground, Image, StyleSheet } from "react-native";
+import {
+  View,
+  Text,
+  ImageBackground,
+  Image,
+  StyleSheet,
+  TouchableOpacity,
+} from "react-native";
 import React from "react";
 import HomeImg from "./../assets/images/MaskGroup2.jpg";
-import GameLogo from "./../assets/images/GameLogo.jpg";
+import GameLogo from "./../assets/images/GameLogo.png";
 import { LinearGradient } from "expo-linear-gradient";
+import SmallImg from "./../assets/images/small-Icon.png";
 
 const Home = () => {
   return (
@@ -96,22 +104,51 @@ const Home = () => {
                   >
                     <View
                       style={{
-                        backgroundColor: "#28D0FD",
                         width: "100%",
                         alignItems: "center",
-                        borderWidth: 2,
-                        borderColor: "#2D8FB4",
-                        borderRadius: 9,
                       }}
                     >
-                      <Text
-                        style={{
-                          fontSize: 30,
-                          color: "#FFFFFF",
-                        }}
+                      <TouchableOpacity
+                        onPress={() => console.log("btn pressed")}
+                        style={{ width: "100%", position: "relative" }}
                       >
-                        f
-                      </Text>
+                        <View style={styles.buttonParent}>
+                          <LinearGradient
+                            colors={["#FFF", "#E34D88", "#E34D88"]}
+                            start={{ x: 0, y: 0 }}
+                            end={{ x: 0, y: 0.5 }}
+                            style={styles.buttonGrad}
+                          >
+                            <Image
+                              source={SmallImg}
+                              style={{
+                                position: "absolute",
+                                margin: 1,
+                              }}
+                            />
+
+                            <Text
+                              style={{
+                                fontSize: 25,
+                                textAlign: "center",
+                                color: "#fff",
+                                paddingTop: 10,
+                              }}
+                            >
+                              Yes
+                            </Text>
+                            <LinearGradient
+                              colors={["#E34D88", "#E34D88", "#1b1c1c"]}
+                              start={{ x: 0, y: 0.5 }}
+                              end={{ x: 0, y: 1 }}
+                              style={{
+                                height: 5,
+                                bottom: -5,
+                              }}
+                            ></LinearGradient>
+                          </LinearGradient>
+                        </View>
+                      </TouchableOpacity>
                     </View>
                   </View>
                 </View>
@@ -153,6 +190,35 @@ var styles = StyleSheet.create({
     margin: 10,
     color: "#FFFFFF",
     backgroundColor: "#28D0FD",
+  },
+  appButtonContainer: {
+    elevation: 30,
+    backgroundColor: "#E34D88",
+    // borderRadius: 10,
+    // paddingVertical: 10,
+    paddingHorizontal: 12,
+  },
+  appButtonText: {
+    fontSize: 18,
+    color: "#fff",
+    fontWeight: "bold",
+    alignSelf: "center",
+    textTransform: "uppercase",
+    opacity: 1,
+  },
+  buttonGrad: {
+    height: "100%",
+    borderRadius: 6,
+    // position: "absolute",
+    // bottom: 5,
+  },
+  buttonParent: {
+    height: 70,
+    // borderRadius: 10,
+    borderWidth: 3,
+    borderColor: "#C91653",
+    borderRadius: 9,
+    // backgroundColor: "#024e51",
   },
 });
 
